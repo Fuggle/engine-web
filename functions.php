@@ -2,7 +2,7 @@
 	include('config.php');
 
 	print_r("host:".$host." user: ".$username." pass: ".$password." db: ".$db."<br />");
-	die();
+
 	// Create connection
 	$con=mysqli_connect($host, $username, $password, $db);
 
@@ -13,6 +13,7 @@
 
 	function request_API($path){
 	    // Create connection
+	    global $host, $username, $db, $password;
 	    $con=mysqli_connect($host, $username, $password, $db);
 
 	    if (mysqli_connect_errno()) {
