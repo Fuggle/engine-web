@@ -8,6 +8,6 @@
 	//DEV details
 	$username = "root";
 	$password = "";
-	$host = "localhost";
+	$host = "engine.local";
 
 ?>

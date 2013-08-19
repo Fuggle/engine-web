@@ -39,6 +39,8 @@
 	    $resp = curl_exec($curl);
 
 	    $data = parseJSON($resp);
+	    pushData($data, "caches");
+	    die();
 
 	    $sql_string = "INSERT INTO `API_Cache`.`caches` (`cache_ID`, `time_stamp`, `stored_responds`) VALUES (NULL, CURRENT_TIMESTAMP,".$resp." )";
 	    mysqli_query($con, $sql_string);
@@ -66,8 +68,37 @@
 	takes an array and a string (table name)...
 	pushes the given array into the specified table.
 	*/
-	function pushData(array $data, string $table) {
-		print_r($table);
+	function pushData(array $data, $table) {
+		global $host, $username, $db, $password;
+	    $con=mysqli_connect($host, $username, $password, $db);
+
+	    if (mysqli_connect_errno()) {
+	        printf("Connect failed: %s\n", mysqli_connect_error());
+	        exit();
+	    }
+
+	    $query = "SELECT * FROM API_Cache.".$table;
+
+	    $result = mysqli_query($con, $query);
+	    $fields = mysqli_fetch_fields($result);
+	    $columns = array();
+	    foreach ($fields as $key => $value) {
+	    	array_push($columns, $value->name);
+	    }
+
+	    foreach ($data as $key => $value) {
+	    	if (in_array($key, $columns)) {
+	    		print_r('key is in columns');
+	    	}
+	        foreach ($value as $ke => $val) {
+	            print_r($val);
+	            foreach ($val as $k => $v) {
+	            	print_r($k);
+	            }
+	        }
+	    }
+	    die();
+	    mysqli_close($con);
 	}
 
 	//this will return an array of all vehicles
