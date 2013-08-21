@@ -39,7 +39,7 @@
 	    $resp = curl_exec($curl);
 
 	    $data = parseJSON($resp);
-	    pushData($data, "caches");
+	    pushData($data);
 	    die();
 
 	    $sql_string = "INSERT INTO `API_Cache`.`caches` (`cache_ID`, `time_stamp`, `stored_responds`) VALUES (NULL, CURRENT_TIMESTAMP,".$resp." )";
@@ -64,11 +64,10 @@
 	}
 
 	/*
-	TODO: all-purpose function that...
-	takes an array and a string (table name)...
-	pushes the given array into the specified table.
+	push stop data into database.
+	takes an array.
 	*/
-	function pushData(array $data, $table) {
+	function pushData(array $data) {
 		global $host, $username, $db, $password;
 	    $con=mysqli_connect($host, $username, $password, $db);
 
@@ -88,12 +87,18 @@
 
 	    foreach ($data as $key => $value) {
 	    	if (in_array($key, $columns)) {
-	    		print_r('key is in columns');
+	    		
 	    	}
 	        foreach ($value as $ke => $val) {
 	            print_r($val);
+	            if ($ke )
 	            foreach ($val as $k => $v) {
 	            	print_r($k);
+	            	if (is_array($v)) {
+	            		foreach ($v as $kx => $vx) {
+		            		print_r($kx);
+		            	}
+	            	}
 	            }
 	        }
 	    }
