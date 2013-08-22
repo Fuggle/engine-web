@@ -1,0 +1,425 @@
+{
+  "Items": [
+    {
+      "LineId": "Airport",
+      "LineName": "Airport",
+      "Routes": [
+        {
+          "RouteCode": "BRBD",
+          "RouteName": "Brisbane City to Airport line"
+        },
+        {
+          "RouteCode": "BDBR",
+          "RouteName": "Airport line to Brisbane City"
+        },
+        {
+          "RouteCode": "BDVL",
+          "RouteName": "Airport line to Varsity Lakes line"
+        },
+        {
+          "RouteCode": "VLBD",
+          "RouteName": "Varsity Lakes line to Airport line"
+        }
+      ],
+      "VehicleType": 8
+    },
+    {
+      "LineId": "Gold Coast",
+      "LineName": "Gold Coast",
+      "Routes": [
+        {
+          "RouteCode": "BDVL",
+          "RouteName": "Airport line to Varsity Lakes line"
+        },
+        {
+          "RouteCode": "VLBD",
+          "RouteName": "Varsity Lakes line to Airport line"
+        },
+        {
+          "RouteCode": "VLDB",
+          "RouteName": "Varsity Lakes line to Doomben line"
+        },
+        {
+          "RouteCode": "BRVL",
+          "RouteName": "Brisbane City to Varsity Lakes line"
+        },
+        {
+          "RouteCode": "VLBR",
+          "RouteName": "Varsity Lakes line to Brisbane City"
+        },
+        {
+          "RouteCode": "SHVL",
+          "RouteName": "Shorncliffe line to Varsity Lakes line"
+        }
+      ],
+      "VehicleType": 8
+    },
+    {
+      "LineId": "Beenleigh",
+      "LineName": "Beenleigh",
+      "Routes": [
+        {
+          "RouteCode": "BRBN",
+          "RouteName": "Brisbane City to Beenleigh line"
+        },
+        {
+          "RouteCode": "BNBR",
+          "RouteName": "Beenleigh line to Brisbane City"
+        },
+        {
+          "RouteCode": "DBBN",
+          "RouteName": "Doomben line to Beenleigh line"
+        },
+        {
+          "RouteCode": "FGBN",
+          "RouteName": "Ferny Grove line to Beenleigh line"
+        },
+        {
+          "RouteCode": "BNFG",
+          "RouteName": "Beenleigh line to Ferny Grove line"
+        },
+        {
+          "RouteCode": "SHBN",
+          "RouteName": "Shorncliffe line to Beenleigh line"
+        },
+        {
+          "RouteCode": "BNSH",
+          "RouteName": "Beenleigh line to Shorncliffe line"
+        },
+        {
+          "RouteCode": "BNDB",
+          "RouteName": "Beenleigh via Brisbane City to Doomben"
+        }
+      ],
+      "VehicleType": 8
+    },
+    {
+      "LineId": "Caboolture",
+      "LineName": "Caboolture",
+      "Routes": [
+        {
+          "RouteCode": "BRCA",
+          "RouteName": "Brisbane City to Caboolture line"
+        },
+        {
+          "RouteCode": "CABR",
+          "RouteName": "Caboolture line to Brisbane City"
+        },
+        {
+          "RouteCode": "CAIP",
+          "RouteName": "Caboolture line to Ipswich line"
+        },
+        {
+          "RouteCode": "CARW",
+          "RouteName": "Caboolture line to Rosewood line"
+        },
+        {
+          "RouteCode": "IPCA",
+          "RouteName": "Ipswich line to Caboolture line"
+        },
+        {
+          "RouteCode": "RWCA",
+          "RouteName": "Rosewood line to Caboolture line"
+        },
+        {
+          "RouteCode": "CARL",
+          "RouteName": "Caboolture line to Richlands line"
+        },
+        {
+          "RouteCode": "RLCA",
+          "RouteName": "Richlands line to Caboolture line"
+        }
+      ],
+      "VehicleType": 8
+    },
+    {
+      "LineId": "Ipswich/Rosewood",
+      "LineName": "Ipswich/Rosewood",
+      "Routes": [
+        {
+          "RouteCode": "CAIP",
+          "RouteName": "Caboolture line to Ipswich line"
+        },
+        {
+          "RouteCode": "CARW",
+          "RouteName": "Caboolture line to Rosewood line"
+        },
+        {
+          "RouteCode": "IPCA",
+          "RouteName": "Ipswich line to Caboolture line"
+        },
+        {
+          "RouteCode": "RWCA",
+          "RouteName": "Rosewood line to Caboolture line"
+        },
+        {
+          "RouteCode": "CARL",
+          "RouteName": "Caboolture line to Richlands line"
+        },
+        {
+          "RouteCode": "RLCA",
+          "RouteName": "Richlands line to Caboolture line"
+        },
+        {
+          "RouteCode": "BRIP",
+          "RouteName": "Brisbane City to Ipswich line"
+        },
+        {
+          "RouteCode": "BRRW",
+          "RouteName": "Brisbane City to Rosewood line"
+        },
+        {
+          "RouteCode": "IPBR",
+          "RouteName": "Ipswich line to Brisbane City"
+        },
+        {
+          "RouteCode": "RWBR",
+          "RouteName": "Rosewood line to Brisbane City"
+        },
+        {
+          "RouteCode": "IPRW",
+          "RouteName": "Ipswich to Rosewood"
+        },
+        {
+          "RouteCode": "RWIP",
+          "RouteName": "Rosewood to Ipswich"
+        },
+        {
+          "RouteCode": "NAIP",
+          "RouteName": "Nambour line to Ipswich line"
+        },
+        {
+          "RouteCode": "NARL",
+          "RouteName": "Nambour line to Richlands line"
+        },
+        {
+          "RouteCode": "RLNA",
+          "RouteName": "Richlands line to Nambour line"
+        }
+      ],
+      "VehicleType": 8
+    },
+    {
+      "LineId": "Richlands",
+      "LineName": "Richlands",
+      "Routes": [
+        {
+          "RouteCode": "CARL",
+          "RouteName": "Caboolture line to Richlands line"
+        },
+        {
+          "RouteCode": "RLCA",
+          "RouteName": "Richlands line to Caboolture line"
+        },
+        {
+          "RouteCode": "BRRL",
+          "RouteName": "Brisbane City to Richlands line"
+        },
+        {
+          "RouteCode": "RLBR",
+          "RouteName": "Richlands line to Brisbane City"
+        },
+        {
+          "RouteCode": "NARL",
+          "RouteName": "Nambour line to Richlands line"
+        },
+        {
+          "RouteCode": "RLNA",
+          "RouteName": "Richlands line to Nambour line"
+        }
+      ],
+      "VehicleType": 8
+    },
+    {
+      "LineId": "Cleveland",
+      "LineName": "Cleveland",
+      "Routes": [
+        {
+          "RouteCode": "BRCL",
+          "RouteName": "Brisbane City to Cleveland line"
+        },
+        {
+          "RouteCode": "CLBR",
+          "RouteName": "Cleveland line to Brisbane City"
+        },
+        {
+          "RouteCode": "DBCL",
+          "RouteName": "Doomben line to Cleveland line"
+        },
+        {
+          "RouteCode": "CLDB",
+          "RouteName": "Cleveland line to Doomben line"
+        },
+        {
+          "RouteCode": "FGCL",
+          "RouteName": "Ferny Grove line to Cleveland line"
+        },
+        {
+          "RouteCode": "CLFG",
+          "RouteName": "Cleveland line to Ferny Grove line"
+        },
+        {
+          "RouteCode": "SHCL",
+          "RouteName": "Shorncliffe line to Cleveland line"
+        },
+        {
+          "RouteCode": "CLSH",
+          "RouteName": "Cleveland line to Shorncliffe line"
+        },
+        {
+          "RouteCode": "BNDB",
+          "RouteName": "Beenleigh via Brisbane City to Doomben"
+        }
+      ],
+      "VehicleType": 8
+    },
+    {
+      "LineId": "Doomben",
+      "LineName": "Doomben",
+      "Routes": [
+        {
+          "RouteCode": "BRDB",
+          "RouteName": "Brisbane City to Doomben line"
+        },
+        {
+          "RouteCode": "DBBR",
+          "RouteName": "Doomben line to Brisbane City"
+        },
+        {
+          "RouteCode": "DBBN",
+          "RouteName": "Doomben line to Beenleigh line"
+        },
+        {
+          "RouteCode": "DBCL",
+          "RouteName": "Doomben line to Cleveland line"
+        },
+        {
+          "RouteCode": "CLDB",
+          "RouteName": "Cleveland line to Doomben line"
+        },
+        {
+          "RouteCode": "VLDB",
+          "RouteName": "Varsity Lakes line to Doomben line"
+        },
+        {
+          "RouteCode": "BNDB",
+          "RouteName": "Beenleigh via Brisbane City to Doomben"
+        }
+      ],
+      "VehicleType": 8
+    },
+    {
+      "LineId": "Ferny Grove",
+      "LineName": "Ferny Grove",
+      "Routes": [
+        {
+          "RouteCode": "BRFG",
+          "RouteName": "Brisbane City to Ferny Grove line"
+        },
+        {
+          "RouteCode": "FGBR",
+          "RouteName": "Ferny Grove line to Brisbane City"
+        },
+        {
+          "RouteCode": "FGBN",
+          "RouteName": "Ferny Grove line to Beenleigh line"
+        },
+        {
+          "RouteCode": "BNFG",
+          "RouteName": "Beenleigh line to Ferny Grove line"
+        },
+        {
+          "RouteCode": "FGCL",
+          "RouteName": "Ferny Grove line to Cleveland line"
+        },
+        {
+          "RouteCode": "CLFG",
+          "RouteName": "Cleveland line to Ferny Grove line"
+        }
+      ],
+      "VehicleType": 8
+    },
+    {
+      "LineId": "Shorncliffe",
+      "LineName": "Shorncliffe",
+      "Routes": [
+        {
+          "RouteCode": "BRSH",
+          "RouteName": "Brisbane City to Shorncliffe line"
+        },
+        {
+          "RouteCode": "SHBR",
+          "RouteName": "Shorncliffe line to Brisbane City"
+        },
+        {
+          "RouteCode": "SHBN",
+          "RouteName": "Shorncliffe line to Beenleigh line"
+        },
+        {
+          "RouteCode": "BNSH",
+          "RouteName": "Beenleigh line to Shorncliffe line"
+        },
+        {
+          "RouteCode": "SHCL",
+          "RouteName": "Shorncliffe line to Cleveland line"
+        },
+        {
+          "RouteCode": "CLSH",
+          "RouteName": "Cleveland line to Shorncliffe line"
+        },
+        {
+          "RouteCode": "SHVL",
+          "RouteName": "Shorncliffe line to Varsity Lakes line"
+        },
+        {
+          "RouteCode": "BNDB",
+          "RouteName": "Beenleigh via Brisbane City to Doomben"
+        }
+      ],
+      "VehicleType": 8
+    },
+    {
+      "LineId": "Sunshine Coast",
+      "LineName": "Sunshine Coast",
+      "Routes": [
+        {
+          "RouteCode": "BRGY",
+          "RouteName": "Brisbane City to Gympie North line"
+        },
+        {
+          "RouteCode": "BRNA",
+          "RouteName": "Brisbane City to Nambour line"
+        },
+        {
+          "RouteCode": "GYBR",
+          "RouteName": "Gympie North line to Brisbane City"
+        },
+        {
+          "RouteCode": "NABR",
+          "RouteName": "Nambour line to Brisbane City"
+        },
+        {
+          "RouteCode": "CANA",
+          "RouteName": "Caboolture to Nambour"
+        },
+        {
+          "RouteCode": "NACA",
+          "RouteName": "Nambour to Caboolture"
+        },
+        {
+          "RouteCode": "NAIP",
+          "RouteName": "Nambour line to Ipswich line"
+        },
+        {
+          "RouteCode": "NARL",
+          "RouteName": "Nambour line to Richlands line"
+        },
+        {
+          "RouteCode": "RLNA",
+          "RouteName": "Richlands line to Nambour line"
+        }
+      ],
+      "VehicleType": 8
+    }
+  ]
+}

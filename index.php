@@ -11,7 +11,9 @@ include 'functions.php'
 	<body>
 		<h1>Hello</h1>
 		<?php
-		$stops = request_API("/location/rest/stops?ids=000043");
+		$path="/location/rest/stops";		
+		$parameter="ids=000043"
+		$stops = request_API($path,$parameter);
 		 ?>
 	</body>
 </html>
