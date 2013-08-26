@@ -14,7 +14,7 @@
 	//This function will request the translink data base directly
 	//and record the respond into the cache database with a timestamp
 	//it will return a associated array of rendeed object
-	function request_API($path, $parameters){
+	function request_API($bypassCahe,$path, $parameters){
 	    // Create connection
 	    global $host, $username, $db, $password;
 	    $con=mysqli_connect($host, $username, $password, $db);
