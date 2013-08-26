@@ -1,5 +1,5 @@
 <?php 
-include 'functions.php' 
+//include 'functions.php' 
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
@@ -11,8 +11,10 @@ include 'functions.php'
 	<body>
 		<h1>Hello</h1>
 		<?php
+		phpinfo();
+		die();
 		$path="/location/rest/stops";		
-		$parameter="ids=000043"
+		$parameter="ids=000043";
 		$stops = request_API($path,$parameter);
 		 ?>
 	</body>

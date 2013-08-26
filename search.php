@@ -1,11 +1,10 @@
-<?php
-	include('php_fast_cache.php');
-    $id=$_GET['ids'];
-    //cache_engine("network/rest/routes?date=24+Aug+2013");
-    cache_engine("location/rest/stops?ids=".$id);
-    //cache_engine();
+<?php 
+
+    $query=$_GET['query'];
+    cache_engine("location/rest/stops?query=".$query);
+
     function cache_engine($path_querry){ 
-    	//$path_querry="network/rest/routes?date=24+Aug+2013";  
+ 
 	    $cache = new phpFastCache("auto");
 	    $opia_username="tran.khoa";
 		$opia_password="wNT}MGc@y+k0";
@@ -35,6 +34,5 @@
 	    }
 	    //return $cache->get($url);
     }
-    
-    
+
 ?>
