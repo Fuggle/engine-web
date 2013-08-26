@@ -1,36 +1,35 @@
 <?php 
 
     $query=$_GET['query'];
-    cache_engine("location/rest/stops?query=".$query);
+    search("location/rest/resolve?input=".$query."&filter=0&maxResults=25&api_key=special-key");
 
-    function cache_engine($path_querry){ 
+    /*
+	This handles searching for locations, stops etc.
+	Takes a path + search query and returns an array of 
+	search results or null if there is none.
+    */
+    function search($path_querry){ 
  
-	    $cache = new phpFastCache("auto");
 	    $opia_username="tran.khoa";
 		$opia_password="wNT}MGc@y+k0";
-	    //$url=("https://opia.api.translink.com.au/v1/network/rest/routes?date=24+Aug+2013");
 	    $url=("https://opia.api.translink.com.au/v1/".$path_querry);
 	    
-	    $results = $cache->get($url);
+	    $headers = array('Accept: application/json','Content-Type: application/json');
+	    
+
+	    //intiitial ther cURL 
+	    $curl = curl_init();
+	    
+	    curl_setopt($curl, CURLOPT_URL, $url);
+	    curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+	    curl_setopt($curl, CURLOPT_RETURNTRANSFER,1);
+	    curl_setopt($curl, CURLOPT_USERPWD,$opia_username.':'.$opia_password);
+	    $resp = curl_exec($curl);
 	
-	    if($results == null) {
-	        			    
-		    $headers = array('Accept: application/json','Content-Type: application/json');
-		    //intiitial ther cURL 
-		    $curl = curl_init();
-		    
-		    curl_setopt($curl, CURLOPT_URL, $url);
-		    curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
-		    curl_setopt($curl, CURLOPT_RETURNTRANSFER,1);
-		    curl_setopt($curl, CURLOPT_USERPWD,$opia_username.':'.$opia_password);
-		    $resp = curl_exec($curl);
-	        curl_close($curl);
-	        // Write to Cache Save API Calls next time
-	        $cache->set($url, $resp, 3600*24*7);// cache to database 
-	        echo ("<div style='color:red'>".$cache->get($url)."</div>");
-	    }
-	    else{
-	    	echo ("<div style='color:blue'>".$cache->get($url)."</div>");
+	    if($resp == null) {
+	    	print_r(null);
+	    } else {
+	    	return $resp;
 	    }
 	    //return $cache->get($url);
     }
