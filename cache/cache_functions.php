@@ -1,16 +1,21 @@
 <?php 
 	include('php_fast_cache.php');
 	
-	function cache_engine($path_querry){ 
-    	//$path_querry="network/rest/routes?date=24+Aug+2013";  
+	function cache_engine($path_querry,$cacheID){ 
+	
 	    $cache = new phpFastCache("auto");
+	    
 	    $opia_username="tran.khoa";
 		$opia_password="wNT}MGc@y+k0";
-	    //$url=("https://opia.api.translink.com.au/v1/network/rest/routes?date=24+Aug+2013");
+	     
 	    $url=("https://opia.api.translink.com.au/v1/".$path_querry);
+	    echo($url);
+	    if($cacheID==null){
+		     $results = $cache->get($url);
+	    }else{
+		     $results = $cache->get($cacheID);
+	    }
 	    
-	    $results = $cache->get($url);
-	
 	    if($results == null) {
 	        			    
 		    $headers = array('Accept: application/json','Content-Type: application/json');
@@ -23,13 +28,19 @@
 		    curl_setopt($curl, CURLOPT_USERPWD,$opia_username.':'.$opia_password);
 		    $resp = curl_exec($curl);
 	        curl_close($curl);
+	        
 	        // Write to Cache Save API Calls next time
-	        $cache->set($url, $resp, 3600*24*7);// cache to database 
-	        echo ("<div style='color:red'>".$cache->get($url)."</div>");
+	        
+	        if($cacheID==null){
+		     	 $cache->set($url, $resp, 3600*24*7);// cache to database 
+		     }else{
+		     	$cache->set($cacheID, $resp, 3600*24*7);// cache to database 
+		     }	        
+	        echo ("<div style='color:red'>".$resp."</div>");
 	    }
 	    else{
-	    	echo ("<div style='color:blue'>".$cache->get($url)."</div>");
+	    	echo ("<div style='color:blue'>".$results."</div>");
 	    }
-	    return $cache->get($url);
+	    //return $results;
     }
 ?>
