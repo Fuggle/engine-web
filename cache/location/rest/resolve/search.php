@@ -1,7 +1,7 @@
 <?php 
 
     $query=$_GET['query'];
-    search("location/rest/resolve?input=".$query."&filter=0&maxResults=25&api_key=special-key");
+    search("location/rest/resolve?input=".urlencode($query)."&filter=0&maxResults=25&api_key=special-key");
 
     /*
 	This handles searching for locations, stops etc.
@@ -27,11 +27,10 @@
 	    $resp = curl_exec($curl);
 	
 	    if($resp == null) {
-	    	print_r(null);
+	    	return null;
 	    } else {
-	    	return $resp;
+	    	return $resp
 	    }
-	    //return $cache->get($url);
     }
 
 ?>
