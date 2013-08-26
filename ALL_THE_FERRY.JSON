@@ -1,0 +1,82 @@
+{
+  "Items": [
+    {
+      "LineId": "CityCat",
+      "LineName": "CityCat",
+      "Routes": [
+        {
+          "RouteCode": "NHAM",
+          "RouteName": "CityCat - UQ to Northshore Hamilton"
+        },
+        {
+          "RouteCode": "UQSL",
+          "RouteName": "CityCat - Northshore Hamilton to UQ"
+        }
+      ],
+      "VehicleType": 4
+    },
+    {
+      "LineId": "Holman Street to Thornton Street Cross River Ferry",
+      "LineName": "Holman Street to Thornton Street Cross River Ferry",
+      "Routes": [
+        {
+          "RouteCode": "HOLM",
+          "RouteName": "Cross River Ferry - Thornton St to Holman St"
+        },
+        {
+          "RouteCode": "THRN",
+          "RouteName": "Cross River Ferry - Holman St to Thornton St"
+        }
+      ],
+      "VehicleType": 4
+    },
+    {
+      "LineId": "Bulimba to Teneriffe Cross River Ferry",
+      "LineName": "Bulimba to Teneriffe Cross River Ferry",
+      "Routes": [
+        {
+          "RouteCode": "TNRF",
+          "RouteName": "Cross River Ferry - Bulimba to Teneriffe"
+        }
+      ],
+      "VehicleType": 4
+    },
+    {
+      "LineId": "Norman Park to New Farm Park Cross River Ferry",
+      "LineName": "Norman Park to New Farm Park Cross River Ferry",
+      "Routes": [
+        {
+          "RouteCode": "NORM",
+          "RouteName": "Cross River Ferry - New Farm Park to Norman Park"
+        }
+      ],
+      "VehicleType": 4
+    },
+    {
+      "LineId": "CityHopper",
+      "LineName": "CityHopper",
+      "Routes": [
+        {
+          "RouteCode": "NTHQ",
+          "RouteName": "Inner City Ferry - Sydney St to North Quay"
+        },
+        {
+          "RouteCode": "SYDS",
+          "RouteName": "Inner City Ferry - North Quay to Sydney St"
+        }
+      ],
+      "VehicleType": 4
+    },
+    {
+      "LineId": "Southern Moreton Bay Island Ferry",
+      "LineName": "Southern Moreton Bay Island Ferry",
+      "Routes": [
+        {
+          "RouteCode": "SMBI",
+          "RouteName": "Southern Moreton Bay Island Ferry"
+        }
+      ],
+      "VehicleType": 4
+    }
+  ]
+}
