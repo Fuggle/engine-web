@@ -40,8 +40,15 @@
 	    curl_setopt($curl, CURLOPT_USERPWD,$opia_username.':'.$opia_password);
 	    $resp = curl_exec($curl);
 
+	    $query = "SELECT * FROM API_Cache.date_test";
+	    $result = mysqli_query($con, $query);
+	    $rows = mysqli_fetch_array($result, MYSQLI_ASSOC);
+	    mysqli_close($con);
+	    print_r($rows);
+	    die();
+
 	    $data = parseJSON($resp);
-	    pushData($data);
+	    pushStopData($data);
 	    die();
 
 	    $sql_string = "INSERT INTO `API_Cache`.`caches` (`cache_ID`, `time_stamp`, `stored_responds`) VALUES (NULL, CURRENT_TIMESTAMP,".$resp." )";
@@ -69,7 +76,7 @@
 	push stop data into database.
 	takes an array.
 	*/
-	function pushData(array $data) {
+	function pushStopData(array $data) {
 		global $host, $username, $db, $password;
 	    $con=mysqli_connect($host, $username, $password, $db);
 
@@ -78,9 +85,13 @@
 	        exit();
 	    }
 
-	    $query = "SELECT * FROM API_Cache.".$table;
+	    $query = "SELECT * FROM API_Cache.date_test";
 
 	    $result = mysqli_query($con, $query);
+	    mysqli_close($con);
+	    print_r($result);
+	    die();
+
 	    $fields = mysqli_fetch_fields($result);
 	    $columns = array();
 	    foreach ($fields as $key => $value) {
@@ -143,6 +154,15 @@
 	    switch ($model) {
 	        case "version":
 	            // get direcly from the cache: 
+	        	switch ($control) {
+	        		case 'api':
+	        			# code...
+	        			break;
+	        		case '';
+	        		default:
+	        			# code...
+	        			break;
+	        	}
 	            printf("model=version");
 	            break;
 	        case "location":// location contain s
