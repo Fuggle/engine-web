@@ -1,15 +1,14 @@
 <?php
-//network/rest/stop-timeables
 
-	// this page take in the stop ids parameter and return detail information about that specific stop id 's time table
-	//https://opia.api.translink.com.au/v1/network/rest/stop-timetables?stopIds=000043&date=27+aug+2013
+	// this page take in the route code parameter and return route map paths
+	//https://opia.api.translink.com.au/v1/network/rest/route-map-path?routeCode=109&vehicleType=2&date=24+aug+2013&api_key=special-key
 	include('../../../cache_functions.php');
 	date_default_timezone_set('Australia/Queensland');
 	
-	$stopIds=$_GET['stopIds'];
+	$routecode=$_GET['route'];
+	$type=$_GET['type'];
 	$today= date('j+M+Y');
-	//echo $date;
 	$weekday=date('D');
 	$bypassCahe=false;
-	cache_engine(("network/rest/stop-timetables?stopIds=".$stopIds."&date=".$today),("stop_".$stopIds."_timestable_on_".$weekday));// return the time with utc added 7 day.
+	cache_engine(("network/rest/route-map-path?routeCode=".$routecode."&vehicleType=".$type."&date=".$today."&api_key=special-key"),("route_".$routecode.  "_timestable_on_".$weekday));
 ?>

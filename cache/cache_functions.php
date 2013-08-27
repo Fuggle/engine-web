@@ -44,27 +44,26 @@
 		        if($cacheID==null){
 			     	 $cache->set($url, $resp, 3600*24*$cacheTime);// cache to database 
 			     	 $results = $cache->get($url);
-			     }else{
+			    }else{
 			     	$cache->set($cacheID, $resp, 3600*24*$cacheTime);// cache to database 
 			     	$results = $cache->get($cacheID);
-			     }
-			     	  
-			    // echo ("<div style='color:red'>Not cached</div>");
+			    }
+			    
+			    print_r($results);
+			    //echo ("<div style='color:red'>Not cached</div>");
 		        
 		    }
 		    else{
+		    	print_r($results);
 		    	//echo ("<div style='color:blue'>Cached</div>");
 		    }
 		    return $results;
     }
     
     
+
     /*
-		this function takes in a paths_querry, 
-		the querry is passed directly to translink without being cached
-	*/
-    /*
-	Handles querying the OPIA API. Takes a path string (eg. "ocation/rest/resolve?input=X") 
+	Handles querying the OPIA API. Takes a path string (eg. "location/rest/resolve?input=X") 
 	and returns the response given by OPIA.
     */
     function querry_opia($path_querry){
@@ -87,11 +86,11 @@
         return $resp;  
     }
     
+
     /* 
     	this funcion is used to request local_API  (cache_API)
     	and return the json result
     */
-    
     function querry_local($path){
     	
     	//$url=("localhost:8888/cache/".$path);
