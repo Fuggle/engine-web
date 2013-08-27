@@ -49,12 +49,12 @@
 			     	$results = $cache->get($cacheID);
 			    }
 			    
-			    print_r($results);
+			    //print_r($results);
 			    //echo ("<div style='color:red'>Not cached</div>");
 		        
 		    }
 		    else{
-		    	print_r($results);
+		    	//print_r($results);
 		    	//echo ("<div style='color:blue'>Cached</div>");
 		    }
 		    return $results;
@@ -71,7 +71,7 @@
 		$opia_password="wNT}MGc@y+k0";
 	     
 	    $url=("https://opia.api.translink.com.au/v1/".$path_querry);
-	    echo($url);
+	    //echo($url);
 	    $headers = array('Accept: application/json','Content-Type: application/json');
 		//intiitial ther cURL 
 	    $curl = curl_init();
@@ -87,27 +87,14 @@
     }
     
 
-    /* 
-    	this funcion is used to request local_API  (cache_API)
-    	and return the json result
-    */
-    function querry_local($path){
+    /*
+    	get stops from a location
+    	id is a location ID reslove from translink
+    	radius is the range to look for
+    	max result is the number of stops to be returned
     	
-    	//$url=("localhost:8888/cache/".$path);
-	   	$headers = array('Accept: application/json','Content-Type: application/json');
-			    //intiitial ther cURL 
-		//$url="location/rest/stop-near-by/LM%3ABowling%20Clubs%3ASt%20Lucia%20Bowling%20Club?radiusM=1000&useWalkingDistance=true&maxResults=10";
-		$url="";
-		echo $url;
-	    $curl = curl_init();
-	    curl_setopt($curl, CURLOPT_URL, $url);
-	    curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
-	    curl_setopt($curl, CURLOPT_RETURNTRANSFER,1);
-	    $resp = curl_exec($curl);
-        curl_close($curl);
-        echo("<p>this is the resp".$resp->header."</p>");
-        //return $resp;
-    }
+    	Return the stops arround that location in a json string.
+    */
     
     function get_stops_from_location($id,$radiusM,$maxResults){
 	    $useWalkingDistance=true;
@@ -115,9 +102,23 @@
     	return $result; 
     }
     
+    /*
+    	get all the stops information of a specific stop
+    */
+    
     function get_stop_details($id){
 	    $result=cache_engine(("location/rest/stops?ids=".$id));
 	    return $result;
     }
-    
+    /*
+    	convert_strings will take a string and
+    	conver space to %20, and : to 3%A, and , to %2C 
+    	this the string will be sent back to querry opia or send to caches database
+    */
+    function convert_strings($string){
+	    $string=str_replace(" ","%20",$string);
+	    $string=str_replace(":","%3A",$string);
+	    $string=str_replace(",","%2C",$string);
+	    return $string;
+    }
 ?>
