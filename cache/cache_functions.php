@@ -10,7 +10,7 @@
 	This function handles the caching of static data from OPIA.
 	This means that if we already have the data cached, no call to OPIA needs to be made.
 	*/
-	function cache_engine($path_querry,$cacheID){ 
+	function cache_engine($path_querry,$cacheID = null){ 
 		$cacheTime=7;// 7 days cache 
 		
 	    $cache = new phpFastCache("auto");
