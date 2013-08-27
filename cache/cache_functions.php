@@ -71,7 +71,6 @@
 		$opia_password="wNT}MGc@y+k0";
 	     
 	    $url=("https://opia.api.translink.com.au/v1/".$path_querry);
-	    echo($url);
 	    $headers = array('Accept: application/json','Content-Type: application/json');
 		//intiitial ther cURL 
 	    $curl = curl_init();
@@ -83,6 +82,7 @@
 	    $resp = curl_exec($curl);
         curl_close($curl);
         
+        print_r($resp);
         return $resp;  
     }
     
