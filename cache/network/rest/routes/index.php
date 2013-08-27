@@ -5,11 +5,18 @@
 	//https://opia.api.translink.com.au/v1/network/rest/route-map-path?routeCode=109&vehicleType=2&date=24+aug+2013&api_key=special-key
 	include('../../../cache_functions.php');
 	date_default_timezone_set('Australia/Queensland');
-	
-	$routecode=$_GET['route'];
-	$type=$_GET['type'];
+	if (isset($_GET['route'])) {
+		$routecode=$_GET['route']; //this is optional
+	} else {
+		$routecode="";
+	}
 	$today= date('j+M+Y');
 	$weekday=date('D');
 	$bypassCahe=false;
-	cache_engine(("network/rest/route-map-path?routeCode=".$routecode."&vehicleType=".$type."&date=".$today."&api_key=special-key"),("route_map_path_".$routecode.  "_timestable_on_".$weekday));
+
+	if($routecode == "") {
+		cache_engine(("network/rest/routes?date=".$today."&api_key=special-key"),("ALL_routes_on_".$weekday));
+	} else {
+		cache_engine(("network/rest/routes?date=".$today."&routeCodes=".$routecode."&api_key=special-key"),("route_".$routecode."_timestable_on_".$weekday));
+	};
 ?>
