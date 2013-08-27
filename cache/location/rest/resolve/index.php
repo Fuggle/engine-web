@@ -5,7 +5,7 @@
 
     /*
 	This handles searching for locations, stops etc.
-	Takes a path + search query and returns an array of 
+	Takes a path + search query (string) and returns an array of 
 	search results or null if there is none.
     */
     function search($path_querry){ 
