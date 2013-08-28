@@ -110,7 +110,7 @@
     }
     
     $final_result= (json_encode($return_array));
-    $final_result= str_replace('"stop",', '"stop":', $final_result) ;  
+    $final_result= str_replace('"stop",', '', $final_result) ;  
     echo $final_result;
     return($final_result);
 ?>
