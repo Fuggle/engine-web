@@ -99,7 +99,9 @@
 			    				while (list($kc, $vc) = each($vb)) {
 			    				echo( "<pre>\t \t \t \t Key c: ".$kc."=". $vc."</pre>");
 			    				
-			    				
+			    				if	($kc=='Routes'){
+				    				
+			    				}
 			    				if ($kc=="Description"){
 				    				$stop->$kc=$vc;
 			    				}
