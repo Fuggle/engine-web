@@ -4,5 +4,5 @@
 	include('../../../cache_functions.php');
 	$id=$_GET['ids'];
 	$bypassCahe=false;
-	echo cache_engine(("location/rest/stops?ids=".$id));
+	cache_engine(("location/rest/stops?ids=".$id));
 ?>
