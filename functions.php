@@ -45,8 +45,8 @@
 	    $result = mysqli_query($con, $query);
 	    $rows = mysqli_fetch_array($result, MYSQLI_ASSOC);
 	    mysqli_close($con);
-	    print_r($rows);
-	    die();
+	    //print_r($rows);
+	    //die();
 
 	    $data = parseJSON($resp);
 	    pushStopData($data);

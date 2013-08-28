@@ -56,7 +56,6 @@
     $stops_respond=json_decode($stops_respond,true);
     
     $return_array= array();
-    $return_array['result']=array();
     /*
 	while (list($key, $value) = each($stops_respond)) {
 	    	echo "<pre> Key: $key; Value: $value</pre>";
@@ -83,7 +82,7 @@
 	    		if ($key2=="StopId"){	  
 	    			$stop=new stdClass();
 	    			$stop->StopId=$value2;
-		    		
+		    		//echo ($value2 ." ".  $key2);
 		    		$ds=get_stop_details($value2);
 		    		$ds=json_decode($ds,true);
 		    		while (list($ka, $va) = each($ds)) {
@@ -103,12 +102,15 @@
 		    		}
 		    	
 	    		} 
-	    		
-	    	}array_push($return_array['result'],"stop",$stop);
+	    	}
+	    	//$stop_contener=new stdClass();
+	    	//$stop_contener->stopcontener=$stop;
+	    	array_push($return_array,'stop',$stop);
     	}
     }
     
     $final_result= (json_encode($return_array));
+    $final_result= str_replace('"stop",', '"stop":', $final_result) ;  
     echo $final_result;
     return($final_result);
 ?>
