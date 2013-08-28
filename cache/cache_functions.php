@@ -48,16 +48,16 @@
 			     	$cache->set($cacheID, $resp, 3600*24*$cacheTime);// cache to database 
 			     	$results = $cache->get($cacheID);
 			    }
-			    echo ("<div style='color:red;'>");
+			    //echo ("<div style='color:red;'>");
 			    print_r($results);
-			    echo ("</div>");
+			    //echo ("</div>");
 			    //echo ("<div style='color:red'>Not cached</div>");
 		        
 		    }
 		    else{
-		    	echo ("<div style='color:blue;'>");
+		    	//echo ("<div style='color:blue;'>");
 			    print_r($results);
-			    echo ("</div>");
+			    //echo ("</div>");
 		    	//echo ("<div style='color:blue'>Cached</div>");
 		    }
 		    return $results;
@@ -86,6 +86,7 @@
 	    $resp = curl_exec($curl);
         curl_close($curl);
         
+	    print_r($resp);
         return $resp;  
     }
     
