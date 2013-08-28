@@ -11,5 +11,5 @@
 	$today= date('j+M+Y');
 	$weekday=date('D');
 	$bypassCahe=false;
-	cache_engine(("network/rest/route-map-path?routeCode=".$routecode."&vehicleType=".$type."&date=".$today."&api_key=special-key"),("route_map_path_".$routecode.  "_timestable_on_".$weekday));
+	echo cache_engine(("network/rest/route-map-path?routeCode=".$routecode."&vehicleType=".$type."&date=".$today."&api_key=special-key"),("route_map_path_".$routecode.  "_timestable_on_".$weekday));
 ?>

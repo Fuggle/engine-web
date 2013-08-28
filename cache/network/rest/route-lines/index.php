@@ -9,5 +9,5 @@
 	$weekday=date('D');
 	$bypassCahe=false;
 	$type=$_GET['type'];
-	cache_engine(("network/rest/route-lines?vehicleType=".$type."&date=".$today."&api_key=special-key"),("ALL_lines_on_".$weekday));
+	echo cache_engine(("network/rest/route-lines?vehicleType=".$type."&date=".$today."&api_key=special-key"),("ALL_lines_on_".$weekday));
 ?>

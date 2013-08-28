@@ -49,14 +49,14 @@
 			     	$results = $cache->get($cacheID);
 			    }
 			    //echo ("<div style='color:red;'>");
-			    print_r($results);
+			    //print_r($results);
 			    //echo ("</div>");
 			    //echo ("<div style='color:red'>Not cached</div>");
 		        
 		    }
 		    else{
 		    	//echo ("<div style='color:blue;'>");
-			    print_r($results);
+			    //print_r($results);
 			    //echo ("</div>");
 		    	//echo ("<div style='color:blue'>Cached</div>");
 		    }

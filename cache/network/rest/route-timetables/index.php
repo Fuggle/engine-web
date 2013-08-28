@@ -11,5 +11,5 @@
 	$today= date('j+M+Y');
 	$weekday=date('D');
 	$bypassCahe=false;
-	cache_engine(("network/rest/route-timetables?routeCodes=".urlencode($routecodes)."&vehicleType=".$type."&date=".$today."&filterToStartEndStops=false&api_key=special-key"),("route_".$routecodes."_timetable_on_".$weekday));// return the time with utc added 7 day.
+	echo cache_engine(("network/rest/route-timetables?routeCodes=".urlencode($routecodes)."&vehicleType=".$type."&date=".$today."&filterToStartEndStops=false&api_key=special-key"),("route_".$routecodes."_timetable_on_".$weekday));// return the time with utc added 7 day.
 ?>

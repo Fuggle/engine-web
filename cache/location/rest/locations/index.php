@@ -6,5 +6,5 @@
 	include('../../../cache_functions.php');
 	$id=$_GET['ids'];
 	$bypassCahe=false;
-	cache_engine(("location/rest/locations?ids=".urlencode($id)."&api_key=special-key"));
+	echo cache_engine(("location/rest/locations?ids=".urlencode($id)."&api_key=special-key"));
 ?>

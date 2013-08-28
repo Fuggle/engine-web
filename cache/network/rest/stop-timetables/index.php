@@ -11,5 +11,5 @@
 	//echo $date;
 	$weekday=date('D');
 	$bypassCahe=false;
-	cache_engine(("network/rest/stop-timetables?stopIds=".$stopIds."&date=".$today),("stop_".$stopIds."_timestable_on_".$weekday));// return the time with utc added 7 day.
+	echo cache_engine(("network/rest/stop-timetables?stopIds=".$stopIds."&date=".$today),("stop_".$stopIds."_timestable_on_".$weekday));// return the time with utc added 7 day.
 ?>

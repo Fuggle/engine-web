@@ -15,8 +15,8 @@
 	$bypassCahe=false;
 
 	if($routecode == "") {
-		cache_engine(("network/rest/routes?date=".$today."&api_key=special-key"),("ALL_routes_on_".$weekday));
+		echo cache_engine(("network/rest/routes?date=".$today."&api_key=special-key"),("ALL_routes_on_".$weekday));
 	} else {
-		cache_engine(("network/rest/routes?date=".$today."&routeCodes=".$routecode."&api_key=special-key"),("route_".$routecode."_info_on_".$weekday));
+		echo cache_engine(("network/rest/routes?date=".$today."&routeCodes=".$routecode."&api_key=special-key"),("route_".$routecode."_info_on_".$weekday));
 	};
 ?>
