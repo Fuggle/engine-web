@@ -1,4 +1,9 @@
 engine-web
 ==========
 
-web serverside functions for engine number 9 project.
+
+
+This is the backend for ENGINE NUMBER 9.
+
+
+The team:

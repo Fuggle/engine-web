@@ -1,4 +1,6 @@
 <?php 
+/*++++++++++DEV version only render out put +++++++++*/
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++*/
 	/*
 		this fucnction will take in a location name and return the stops arround that locations,
 		location name: String
