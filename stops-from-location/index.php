@@ -21,7 +21,7 @@
 	$location_string=$_GET['location'];
 	$filter=0;
 	$maxResult=4;
-	$location_resolove_result_index=1;
+	$location_resolove_result_index=0;
 	//convert the string to OPIA standard
 	$location_string=convert_strings($location_string);
 	//die();
