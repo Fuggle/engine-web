@@ -125,4 +125,69 @@
 	    $string=str_replace(",","%2C",$string);
 	    return $string;
     }
+    
+    
+    function searchAll($array, $key)
+	{
+	    $results = array();
+	
+	    if (is_array($array))
+	    {
+	        if (isset($array[$key]) && $array[$key])
+	            $results[] = $array;
+	
+	        foreach ($array as $subarray)
+	            $results = array_merge($results, search($subarray, $key));
+	    }
+	
+	    return $results;
+	}
+
+    
+    
+    function find_all($needle, array $haystack, array &$result = null) {
+    // This is to initialize the result array and is only needed for
+    // the first call of this function
+	    if(is_null($result)) {
+	        $result = array();
+	    }
+    
+	    foreach($haystack as $key => $value) {
+	        // Check whether the key is the value we are looking for. If the value
+	        // is not an array, add it to the result array.
+	        if($key === $needle && !is_array($value)) {
+	            $result[] = $value;
+	            break;
+	        }
+	        if(is_array($value)) {
+	            // If the current value is an array, we perform the same
+	            // operation with this 'subarray'.
+	            find_all($needle, $value, $result);
+	        }
+	    }
+	    // This is only needed in the first function call to retrieve the results
+	    return $result;
+	}
+    
+    
+    function ArraySearchRecursive($Needle,$Haystack,$NeedleKey="",$Strict=false,$Path=array()) {
+	  if(!is_array($Haystack)){
+		 return false; 
+	  }
+	    
+	  foreach($Haystack as $Key => $Val) {
+	    if(is_array($Val)&&$SubPath=ArraySearchRecursive($Needle,$Val,$NeedleKey,$Strict,$Path)) {
+	      $Path=array_merge($Path,Array($Key),$SubPath);
+	      return $Path;
+	    }
+	    elseif((!$Strict&&$Val==$Needle&&
+	            $Key==(strlen($NeedleKey)>0?$NeedleKey:$Key))||
+	            ($Strict&&$Val===$Needle&&
+	             $Key==(strlen($NeedleKey)>0?$NeedleKey:$Key))) {
+	      $Path[]=$Key;
+	      return $Path;
+	    }
+	  }
+	  return false;
+	}
 ?>
