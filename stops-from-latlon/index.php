@@ -17,5 +17,5 @@
 	//convert the string to OPIA standard
 	$id=convert_strings("GP:".$latitude.",".$longitude);
 	
-	cache_engine(("location/rest/stops-nearby/".$id."?radiusM=".$radius."&useWalkingDistance=true&maxResults=30&api_key=special-key"));
+	echo cache_engine(("location/rest/stops-nearby/".$id."?radiusM=".$radius."&useWalkingDistance=true&maxResults=30&api_key=special-key"));
 ?>
