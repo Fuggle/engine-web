@@ -70,11 +70,6 @@
 		    }
 		}	
 	*/
-	    
-    
-    
-    
-    
     
     while (list($key, $value) = each($stops_respond)) {
     	while (list($key1, $value1) = each($value)) {    		
@@ -108,9 +103,9 @@
 	    	array_push($return_array,'stop',$stop);
     	}
     }
-    
+
     $final_result= (json_encode($return_array));
-    $final_result= str_replace('"stop",', '', $final_result) ;  
+    $final_result= str_replace('"stop",', '', $final_result);  
     echo $final_result;
     return($final_result);
 ?>

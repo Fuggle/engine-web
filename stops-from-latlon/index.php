@@ -17,5 +17,44 @@
 	//convert the string to OPIA standard
 	$id=convert_strings("GP:".$latitude.",".$longitude);
 	
-	echo cache_engine(("location/rest/stops-nearby/".$id."?radiusM=".$radius."&useWalkingDistance=true&maxResults=30&api_key=special-key"));
+	$stops_response = querry_opia(("location/rest/stops-nearby/".$id."?radiusM=".$radius."&useWalkingDistance=true&maxResults=30&api_key=special-key"));
+	$stops_response = json_decode($stops_response,true);
+
+	$result_array = array();
+
+    while (list($key, $value) = each($stops_response)) {
+    	while (list($key1, $value1) = each($value)) {    		
+    		while (list($key2, $value2) = each($value1)) {
+	    		if ($key2=="StopId"){	  
+	    			$stop=new stdClass();
+	    			$stop->StopId=$value2;
+		    		//print_r("val2: ".$value2." -- key2: ".$key2."<br />");
+		    		$ds=get_stop_details($value2);
+		    		$ds=json_decode($ds,true);
+		    		while (list($ka, $va) = each($ds)) {
+			    		while (list($kb, $vb) = each($va)) {
+			    				while (list($kc, $vc) = each($vb)) {
+			    				if($kc=="Description"){
+				    				$stop->$kc=$vc;
+			    				}
+			    				while (list($kd, $vd) = each($vc)) {
+			    					if ($kd=='Lat'||$kd=='Lng'){
+			    						$stop->$kd=$vd;
+			    					}			    					
+			    				}
+			    			}
+			    			
+			    		}
+		    		}
+		    	
+	    		} 
+	    	}
+	    	array_push($result_array,'stop',$stop);
+    	}
+    }
+
+    $final_result= (json_encode($result_array));
+    $final_result= str_replace('"stop",', '', $final_result);
+	echo $final_result;
+	return $final_result;
 ?>
