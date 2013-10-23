@@ -82,10 +82,13 @@
 		    		$ds=json_decode($ds,true);
 		    		while (list($ka, $va) = each($ds)) {
 			    		while (list($kb, $vb) = each($va)) {
-			    				while (list($kc, $vc) = each($vb)) {
+			    			while (list($kc, $vc) = each($vb)) {
 			    				if($kc=="Description"){
 				    				$stop->$kc=$vc;
-			    				}else{}
+			    				}
+			    				if ($kc=="ServiceType"){
+			    					$stop->$kc=$vc;
+			    				}
 			    				while (list($kd, $vd) = each($vc)) {
 			    					if ($kd=='Lat'||$kd=='Lng'){
 			    						$stop->$kd=$vd;
@@ -95,7 +98,6 @@
 			    			
 			    		}
 		    		}
-		    	
 	    		} 
 	    	}
 	    	//$stop_contener=new stdClass();

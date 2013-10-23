@@ -31,11 +31,15 @@
 		    		//print_r("val2: ".$value2." -- key2: ".$key2."<br />");
 		    		$ds=get_stop_details($value2);
 		    		$ds=json_decode($ds,true);
+		    		//print_r($ds);
 		    		while (list($ka, $va) = each($ds)) {
 			    		while (list($kb, $vb) = each($va)) {
-			    				while (list($kc, $vc) = each($vb)) {
+			    			while (list($kc, $vc) = each($vb)) {
 			    				if($kc=="Description"){
 				    				$stop->$kc=$vc;
+			    				}
+			    				if ($kc=="ServiceType"){
+			    					$stop->$kc=$vc;
 			    				}
 			    				while (list($kd, $vd) = each($vc)) {
 			    					if ($kd=='Lat'||$kd=='Lng'){
@@ -43,10 +47,8 @@
 			    					}			    					
 			    				}
 			    			}
-			    			
 			    		}
 		    		}
-		    	
 	    		} 
 	    	}
 	    	array_push($result_array,'stop',$stop);
