@@ -23,9 +23,7 @@
 	        printf("Connect failed: %s\n", mysqli_connect_error());
 	        exit();
 	    }
-
-	    $opia_username="tran.khoa";
-	    $opia_password="wNT}MGc@y+k0";
+	    include('cache/translink_config.php');
 	    
 	    $url="https://opia.api.translink.com.au/v1/";
 	    

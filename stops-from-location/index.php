@@ -70,11 +70,6 @@
 		    }
 		}	
 	*/
-	    
-    
-    
-    
-    
     
     while (list($key, $value) = each($stops_respond)) {
     	while (list($key1, $value1) = each($value)) {    		
@@ -87,10 +82,13 @@
 		    		$ds=json_decode($ds,true);
 		    		while (list($ka, $va) = each($ds)) {
 			    		while (list($kb, $vb) = each($va)) {
-			    				while (list($kc, $vc) = each($vb)) {
+			    			while (list($kc, $vc) = each($vb)) {
 			    				if($kc=="Description"){
 				    				$stop->$kc=$vc;
-			    				}else{}
+			    				}
+			    				if ($kc=="ServiceType"){
+			    					$stop->$kc=$vc;
+			    				}
 			    				while (list($kd, $vd) = each($vc)) {
 			    					if ($kd=='Lat'||$kd=='Lng'){
 			    						$stop->$kd=$vd;
@@ -100,7 +98,6 @@
 			    			
 			    		}
 		    		}
-		    	
 	    		} 
 	    	}
 	    	//$stop_contener=new stdClass();
@@ -108,9 +105,9 @@
 	    	array_push($return_array,'stop',$stop);
     	}
     }
-    
+
     $final_result= (json_encode($return_array));
-    $final_result= str_replace('"stop",', '', $final_result) ;  
+    $final_result= str_replace('"stop",', '', $final_result);  
     echo $final_result;
     return($final_result);
 ?>
